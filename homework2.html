@@ -70,24 +70,42 @@ Today is: <span id="today">Loading...</span>
 <!-- Name -->
 <tr>
 <td align="right">First Name *</td>
-<td><input type="text" name="firstName" maxlength="30" required></td>
+<td>
+<input type="text" name="firstName" maxlength="30" required
+pattern="[A-Za-z'-]{1,30}"
+title="Enter 1 to 30 letters only.">
+</td>
 
 <td align="right">MI</td>
-<td><input type="text" name="middleInitial" maxlength="1"></td>
+<td>
+<input type="text" name="middleInitial" maxlength="1"
+pattern="[A-Za-z]{1}"
+title="Enter 1 letter only (optional).">
+</td>
 
 <td align="right">Last Name *</td>
-<td><input type="text" name="lastName" maxlength="30" required></td>
+<td>
+<input type="text" name="lastName" maxlength="30" required
+pattern="[A-Za-z]{1}"
+title="Enter 1 to 30 letters only.">
+</td>
 </tr>
 
 <!-- DOB and SSN -->
 <tr>
 <td align="right">Date of Birth *</td>
-<td><input type="text" placeholder="MM/DD/YYYY" required></td>
+<td>
+<input type="text" placeholder="MM/DD/YYYY" required
+pattern="[A-Za-z0-9'-]{1,30}"
+title="Enter date in MM/DD/YYYY format.">
+</td>
 
 <td align="right">SSN *</td>
 <td colspan="3">
 <input type="password" minlength="9" maxlength="11"
-placeholder="***-**-****" required>
+placeholder="***-**-****" required
+pattern="\d{3}-\d{2}-\d{4}"
+title="Enter SSN in format 123-45-6789.">
 </td>
 </tr>
 
@@ -95,25 +113,33 @@ placeholder="***-**-****" required>
 <tr>
 <td align="right">Address Line 1 *</td>
 <td colspan="5">
-<input type="text" maxlength="30" required>
+<input type="text" maxlength="30" required
+pattern=".{2,30}"
+title="Enter your street address (2–30 characters).">
 </td>
 </tr>
 
 <tr>
 <td align="right">Address Line 2</td>
 <td colspan="5">
-<input type="text" maxlength="30">
+<input type="text" maxlength="30"
+pattern=".{2,30}"
+title="Optional. Apartment or unit number.">
 </td>
 </tr>
 
 <!-- City State Zip -->
 <tr>
 <td align="right">City *</td>
-<td><input type="text" maxlength="30" required></td>
+<td>
+<input type="text" maxlength="30" required
+pattern=".{2,30}"
+title="Enter city name.">
+</td>
 
 <td align="right">State *</td>
 <td>
-<select required>
+<select name="state" select required title="Select your state.">
 <option value="">Select</option>
     <option value="AL">Alabama</option>
     <option value="AK">Alaska</option>
@@ -172,19 +198,26 @@ placeholder="***-**-****" required>
 </td>
 
 <td align="right">Zip *</td>
-<td><input type="text" minlength="5" maxlength="10" required></td>
+<td>
+<input type="text" minlength="5" maxlength="10" required
+pattern="\d{5}(-\d{4})?"
+title="Enter ZIP (example: 77002 or 77002-1234).">
+</td>
 </tr>
 
 <!-- Email and Phone -->
-<tr>
+</tr>
 <td align="right">Email *</td>
 <td colspan="2">
-<input type="email" placeholder="name@domain.com" required>
+<input type="email" placeholder="name@domain.com" required
+title="Enter a valid email like name@email.com.">
 </td>
 
 <td align="right">Phone</td>
 <td colspan="2">
-<input type="text" placeholder="713-555-1212">
+<input type="text" placeholder="713-555-1212"
+pattern="\d{3}-\d{3}-\d{4}"
+title="Enter phone number like 000-000-0000.">
 </td>
 </tr>
 
@@ -193,7 +226,8 @@ placeholder="***-**-****" required>
 <td align="right" valign="top">Describe Symptoms</td>
 <td colspan="5">
 <textarea rows="3" cols="50"
-placeholder="Brief description..."></textarea>
+placeholder="Brief description..."
+title="Optional. Describe your symptoms."></textarea>
 </td>
 </tr>
 
@@ -249,19 +283,24 @@ placeholder="Brief description..."></textarea>
 <tr>
 <td align="right">User ID *</td>
 <td colspan="2">
-<input type="text" maxlength="20" required>
+<input type="text" maxlength="20" required
+pattern="[A-Za-z][A-Za-z0-9_-]{4,29}"
+title="5 to 30 characters. Must start with a letter. No spaces.">
 </td>
 
 <td align="right">Password *</td>
 <td colspan="2">
-<input type="password" required>
+<input type="password" required
+pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#%^&*()\-_=+\/<>.,`~])[A-Za-z\d!@#%^&*()\-_=+\/<>.,`~]{8,30}"
+title="8–30 characters. Must include uppercase, lowercase, number, and special character.">
 </td>
 </tr>
 
 <tr>
 <td align="right">Re-enter Password *</td>
 <td colspan="5">
-<input type="password" required>
+<input type="password" required
+title="Re-enter the same password.">
 </td>
 </tr>
 
