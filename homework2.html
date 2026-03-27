@@ -272,12 +272,8 @@ title="Optional. Describe your symptoms."></textarea>
 
 
 <!-- Slider -->
-<tr>
-<td align="right">How active are you? (1-10)</td>
-<td colspan="5">
-<input type="range" min="1" max="10">
-</td>
-</tr>
+<input type="range" id="healthScale" min="1" max="10" value="5" oninput="updateSlider()">
+<span id="sliderValue">5</span>
 
 <!-- User ID and Password -->
 <tr>
