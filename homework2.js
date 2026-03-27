@@ -5,8 +5,9 @@ function reviewForm() {
     document.getElementById("reviewArea").innerHTML =
         "<h3>PLEASE REVIEW THIS INFORMATION</h3>" +
         "<p>Name: " + firstName + " " + lastName + "</p>";
-    function updateSlider() {
+}
+
+function updateSlider() {
     document.getElementById("sliderValue").innerText =
         document.getElementById("healthScale").value;
-}
 }
